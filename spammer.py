@@ -1,6 +1,16 @@
-import pyautogui, time
-time.sleep(2)
-f = open("d:/Rýchly prístup/Desktop/Nový priečinok/vec.txt", 'r')
-for word in f:
-    pyautogui.typewrite(word)
-    pyautogui.press("enter")
+from pynput.keyboard import Key, Controller
+import time
+
+time.sleep(5)
+
+keyboard = Controller()
+
+nick = "@Železo"
+
+for i in range(10):
+    keyboard.type(nick)
+    time.sleep(0.1)
+    keyboard.press(Key.enter)
+    time.sleep(0.1)
+    keyboard.press(Key.enter)
+    time.sleep(2)
